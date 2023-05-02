@@ -1,0 +1,344 @@
+Series has,Syntax,Description:,Label,parameters,Type,cut_syntax
+Constructor,"Series([data, index, dtype, name, copy, ...])",One-dimensional ndarray with axis labels (including time series).,constructor,"['data', 'index', 'dtype', 'name', 'copy', '...']",Function,Series()
+Attributes,Series.index,The index (axis labels) of the Series.,index information,,Attribute,Series.index
+Attributes,Series.array,The ExtensionArray of the data backing this Series or Index.,convert to array,,Attribute,Series.array
+Attributes,Series.values,Return Series as ndarray or ndarray-like depending on the dtype.,find values,,Attribute,Series.values
+Attributes,Series.dtype,Return the dtype object of the underlying data.,find datatypes,,Attribute,Series.dtype
+Attributes,Series.shape,Return a tuple of the shape of the underlying data.,find rows and columns,,Attribute,Series.shape
+Attributes,Series.nbytes,Return the number of bytes in the underlying data.,find bytes,,Attribute,Series.nbytes
+Attributes,Series.ndim,"Number of dimensions of the underlying data, by definition 1.",fijnd dimension,,Attribute,Series.ndim
+Attributes,Series.size,Return the number of elements in the underlying data.,find number of values,,Attribute,Series.size
+Attributes,Series.T,"Return the transpose, which is by definition self.",get transpose,,Attribute,Series.T
+Attributes,"Series.memory_usage([index, deep])",Return the memory usage of the Series.,memory used,"['index', 'deep']",Function,Series.memory_usage()
+Attributes,Series.hasnans,Return True if there are any NaNs.,find nulls,,Attribute,Series.hasnans
+Attributes,Series.empty,Indicator whether Series/DataFrame is empty.,empty,,Attribute,Series.empty
+Attributes,Series.dtypes,Return the dtype object of the underlying data.,find datatypes,,Attribute,Series.dtypes
+Attributes,Series.name,Return the name of the Series.,series name,,Attribute,Series.name
+Attributes,Series.flags,Get the properties associated with this pandas object.,series flags,,Attribute,Series.flags
+Attributes,"Series.set_flags(*[, copy, ...])",Return a new object with updated flags.,series set flags,"['*', 'copy', '...']",Function,Series.set_flags()
+Conversion,"Series.astype(dtype[, copy, errors])",Cast a pandas object to a specified dtype dtype.,change datatype,"['dtype', 'copy', 'errors']",Function,Series.astype()
+Conversion,"Series.convert_dtypes([infer_objects, ...])",Convert columns to best possible dtypes using dtypes supporting pd.NA.,change to best datatype,"['infer_objects', '...']",Function,Series.convert_dtypes()
+Conversion,Series.infer_objects(),Attempt to infer better dtypes for object columns.,get best datatype,[''],Function,Series.infer_objects()
+Conversion,Series.copy([deep]),Make a copy of this object's indices and data.,copy data,['deep'],Function,Series.copy()
+Conversion,Series.bool(),Return the bool of a single element Series or DataFrame.,,[''],Function,Series.bool()
+Conversion,"Series.to_numpy([dtype, copy, na_value])",A NumPy ndarray representing the values in this Series or Index.,convert to numpy,"['dtype', 'copy', 'na_value']",Function,Series.to_numpy()
+Conversion,"Series.to_period([freq, copy])",Convert Series from DatetimeIndex to PeriodIndex.,convert to period,"['freq', 'copy']",Function,Series.to_period()
+Conversion,"Series.to_timestamp([freq, how, copy])","Cast to DatetimeIndex of Timestamps, at beginning of period.",convert to timestamp,"['freq', 'how', 'copy']",Function,Series.to_timestamp()
+Conversion,Series.to_list(),Return a list of the values.,convert to list,[''],Function,Series.to_list()
+Conversion,Series.__array__([dtype]),Return the values as a NumPy array.,convert to numpy,['dtype'],Function,Series.__array__()
+"Indexing, iteration","Series.get(key[, default])",Get item from object for given key (ex: DataFrame column).,get by key,"['key', 'default']",Function,Series.get()
+"Indexing, iteration",Series.at,Access a single value for a row/column label pair.,get by index,,Attribute,Series.at
+"Indexing, iteration",Series.iat,Access a single value for a row/column pair by integer position.,get by row column,,Attribute,Series.iat
+"Indexing, iteration",Series.loc,Access a group of rows and columns by label(s) or a boolean array.,get group by index,,Attribute,Series.loc
+"Indexing, iteration",Series.iloc,Purely integer-location based indexing for selection by position.,get by index,,Attribute,Series.iloc
+"Indexing, iteration",Series.__iter__(),Return an iterator of the values.,iterator,[''],Function,Series.__iter__()
+"Indexing, iteration",Series.items(),"Lazily iterate over (index, value) tuples.",iterate each value,[''],Function,Series.items()
+"Indexing, iteration",Series.iteritems(),"(DEPRECATED) Lazily iterate over (index, value) tuples.",iterate each value,[''],Function,Series.iteritems()
+"Indexing, iteration",Series.keys(),Return alias for index.,get index,[''],Function,Series.keys()
+"Indexing, iteration",Series.pop(item),Return item and drops from series.,remove value,['item'],Function,Series.pop()
+"Indexing, iteration",Series.item(),Return the first element of the underlying data as a Python scalar.,get first value,[''],Function,Series.item()
+"Indexing, iteration","Series.xs(key[, axis, level, drop_level])",Return cross-section from the Series/DataFrame.,get cross section,"['key', 'axis', 'level', 'drop_level']",Function,Series.xs()
+Binary operator functions,"Series.add(other[, level, fill_value, axis])","Return Addition of series and other, element-wise (binary operator add).",add to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.add()
+Binary operator functions,"Series.sub(other[, level, fill_value, axis])","Return Subtraction of series and other, element-wise (binary operator sub).",subtract to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.sub()
+Binary operator functions,"Series.mul(other[, level, fill_value, axis])","Return Multiplication of series and other, element-wise (binary operator mul).",multiply to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.mul()
+Binary operator functions,"Series.div(other[, level, fill_value, axis])","Return Floating division of series and other, element-wise (binary operator truediv).",divide to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.div()
+Binary operator functions,"Series.truediv(other[, level, fill_value, axis])","Return Floating division of series and other, element-wise (binary operator truediv).",divide to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.truediv()
+Binary operator functions,"Series.floordiv(other[, level, fill_value, axis])","Return Integer division of series and other, element-wise (binary operator floordiv).",floor division,"['other', 'level', 'fill_value', 'axis']",Function,Series.floordiv()
+Binary operator functions,"Series.mod(other[, level, fill_value, axis])","Return Modulo of series and other, element-wise (binary operator mod).",mod of series,"['other', 'level', 'fill_value', 'axis']",Function,Series.mod()
+Binary operator functions,"Series.pow(other[, level, fill_value, axis])","Return Exponential power of series and other, element-wise (binary operator pow).",take power in series,"['other', 'level', 'fill_value', 'axis']",Function,Series.pow()
+Binary operator functions,"Series.radd(other[, level, fill_value, axis])","Return Addition of series and other, element-wise (binary operator radd).",add to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.radd()
+Binary operator functions,"Series.rsub(other[, level, fill_value, axis])","Return Subtraction of series and other, element-wise (binary operator rsub).",subtract to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.rsub()
+Binary operator functions,"Series.rmul(other[, level, fill_value, axis])","Return Multiplication of series and other, element-wise (binary operator rmul).",multiply to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.rmul()
+Binary operator functions,"Series.rdiv(other[, level, fill_value, axis])","Return Floating division of series and other, element-wise (binary operator rtruediv).",divide to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.rdiv()
+Binary operator functions,"Series.rtruediv(other[, level, fill_value, axis])","Return Floating division of series and other, element-wise (binary operator rtruediv).",divide to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.rtruediv()
+Binary operator functions,"Series.rfloordiv(other[, level, fill_value, ...])","Return Integer division of series and other, element-wise (binary operator rfloordiv).",floor division,"['other', 'level', 'fill_value', '...']",Function,Series.rfloordiv()
+Binary operator functions,"Series.rmod(other[, level, fill_value, axis])","Return Modulo of series and other, element-wise (binary operator rmod).",mod of series,"['other', 'level', 'fill_value', 'axis']",Function,Series.rmod()
+Binary operator functions,"Series.rpow(other[, level, fill_value, axis])","Return Exponential power of series and other, element-wise (binary operator rpow).",take power in series,"['other', 'level', 'fill_value', 'axis']",Function,Series.rpow()
+Binary operator functions,"Series.combine(other, func[, fill_value])",Combine the Series with a Series or scalar according to func.,merge series ,"['other', 'func', 'fill_value']",Function,Series.combine()
+Binary operator functions,Series.combine_first(other),Update null elements with value in the same location in 'other'.,fill null according to other series,['other'],Function,Series.combine_first()
+Binary operator functions,Series.round([decimals]),Round each value in a Series to the given number of decimals.,round off,['decimals'],Function,Series.round()
+Binary operator functions,"Series.lt(other[, level, fill_value, axis])","Return Less than of series and other, element-wise (binary operator lt).",lesser than series,"['other', 'level', 'fill_value', 'axis']",Function,Series.lt()
+Binary operator functions,"Series.gt(other[, level, fill_value, axis])","Return Greater than of series and other, element-wise (binary operator gt).",greater than series,"['other', 'level', 'fill_value', 'axis']",Function,Series.gt()
+Binary operator functions,"Series.le(other[, level, fill_value, axis])","Return Less than or equal to of series and other, element-wise (binary operator le).",lesser than equal to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.le()
+Binary operator functions,"Series.ge(other[, level, fill_value, axis])","Return Greater than or equal to of series and other, element-wise (binary operator ge).",greater than equal to series,"['other', 'level', 'fill_value', 'axis']",Function,Series.ge()
+Binary operator functions,"Series.ne(other[, level, fill_value, axis])","Return Not equal to of series and other, element-wise (binary operator ne).",not equal series,"['other', 'level', 'fill_value', 'axis']",Function,Series.ne()
+Binary operator functions,"Series.eq(other[, level, fill_value, axis])","Return Equal to of series and other, element-wise (binary operator eq).",equal series,"['other', 'level', 'fill_value', 'axis']",Function,Series.eq()
+Binary operator functions,"Series.product([axis, skipna, level, ...])",Return the product of the values over the requested axis.,product by axis,"['axis', 'skipna', 'level', '...']",Function,Series.product()
+Binary operator functions,Series.dot(other),Compute the dot product between the Series and the columns of other.,dot product of series,['other'],Function,Series.dot()
+"Function application, GroupBy & window","Series.apply(func[, convert_dtype, args])",Invoke function on values of Series.,apply function on series elements,"['func', 'convert_dtype', 'args']",Function,Series.apply()
+"Function application, GroupBy & window","Series.agg([func, axis])",Aggregate using one or more operations over the specified axis.,aggregate series,"['func', 'axis']",Function,Series.agg()
+"Function application, GroupBy & window","Series.aggregate([func, axis])",Aggregate using one or more operations over the specified axis.,aggregate series,"['func', 'axis']",Function,Series.aggregate()
+"Function application, GroupBy & window","Series.transform(func[, axis])",Call func on self producing a Series with the same axis shape as self.,,"['func', 'axis']",Function,Series.transform()
+"Function application, GroupBy & window","Series.map(arg[, na_action])",Map values of Series according to an input mapping or function.,map values of series,"['arg', 'na_action']",Function,Series.map()
+"Function application, GroupBy & window","Series.groupby([by, axis, level, as_index, ...])",Group Series using a mapper or by a Series of columns.,group according to a function,"['by', 'axis', 'level', 'as_index', '...']",Function,Series.groupby()
+"Function application, GroupBy & window","Series.rolling(window[, min_periods, ...])",Provide rolling window calculations.,apply a window on series,"['window', 'min_periods', '...']",Function,Series.rolling()
+"Function application, GroupBy & window","Series.expanding([min_periods, center, ...])",Provide expanding window calculations.,apply expanding windows,"['min_periods', 'center', '...']",Function,Series.expanding()
+"Function application, GroupBy & window","Series.ewm([com, span, halflife, alpha, ...])",Provide exponentially weighted (EW) calculations.,weighted calculations,"['com', 'span', 'halflife', 'alpha', '...']",Function,Series.ewm()
+"Function application, GroupBy & window","Series.pipe(func, *args, **kwargs)",Apply chainable functions that expect Series or DataFrames.,apply chainable functions,"['func', '*args', '**kwargs']",Function,Series.pipe()
+Computations / descriptive stats,Series.abs(),Return a Series/DataFrame with absolute numeric value of each element.,absolute of seroes,[''],Function,Series.abs()
+Computations / descriptive stats,"Series.all([axis, bool_only, skipna, level])","Return whether all elements are True, potentially over an axis.",all true values,"['axis', 'bool_only', 'skipna', 'level']",Function,Series.all()
+Computations / descriptive stats,"Series.any([axis, bool_only, skipna, level])","Return whether any element is True, potentially over an axis.",any true value,"['axis', 'bool_only', 'skipna', 'level']",Function,Series.any()
+Computations / descriptive stats,Series.autocorr([lag]),Compute the lag-N autocorrelation.,caluclate autocoreelation,['lag'],Function,Series.autocorr()
+Computations / descriptive stats,"Series.between(left, right[, inclusive])",Return boolean Series equivalent to left <= series <= right.,return between a range ,"['left', 'right', 'inclusive']",Function,Series.between()
+Computations / descriptive stats,"Series.clip([lower, upper, axis, inplace])",Trim values at input threshold(s).,trim values,"['lower', 'upper', 'axis', 'inplace']",Function,Series.clip()
+Computations / descriptive stats,"Series.corr(other[, method, min_periods])","Compute correlation with other Series, excluding missing values.",correlation with other ,"['other', 'method', 'min_periods']",Function,Series.corr()
+Computations / descriptive stats,Series.count([level]),Return number of non-NA/null observations in the Series.,count of non nulls,['level'],Function,Series.count()
+Computations / descriptive stats,"Series.cov(other[, min_periods, ddof])","Compute covariance with Series, excluding missing values.",covariance with other,"['other', 'min_periods', 'ddof']",Function,Series.cov()
+Computations / descriptive stats,"Series.cummax([axis, skipna])",Return cumulative maximum over a DataFrame or Series axis.,cummulative maximum,"['axis', 'skipna']",Function,Series.cummax()
+Computations / descriptive stats,"Series.cummin([axis, skipna])",Return cumulative minimum over a DataFrame or Series axis.,cummulative minimum,"['axis', 'skipna']",Function,Series.cummin()
+Computations / descriptive stats,"Series.cumprod([axis, skipna])",Return cumulative product over a DataFrame or Series axis.,cummulative product,"['axis', 'skipna']",Function,Series.cumprod()
+Computations / descriptive stats,"Series.cumsum([axis, skipna])",Return cumulative sum over a DataFrame or Series axis.,cummulative sum,"['axis', 'skipna']",Function,Series.cumsum()
+Computations / descriptive stats,"Series.describe([percentiles, include, ...])",Generate descriptive statistics.,statistics of series,"['percentiles', 'include', '...']",Function,Series.describe()
+Computations / descriptive stats,Series.diff([periods]),First discrete difference of element.,difference of values,['periods'],Function,Series.diff()
+Computations / descriptive stats,"Series.factorize([sort, na_sentinel, ...])",Encode the object as an enumerated type or categorical variable.,convert to categorical,"['sort', 'na_sentinel', '...']",Function,Series.factorize()
+Computations / descriptive stats,"Series.kurt([axis, skipna, level, numeric_only])",Return unbiased kurtosis over requested axis.,kurtosis,"['axis', 'skipna', 'level', 'numeric_only']",Function,Series.kurt()
+Computations / descriptive stats,"Series.mad([axis, skipna, level])",(DEPRECATED) Return the mean absolute deviation of the values over the requested axis.,mean absolute deviation,"['axis', 'skipna', 'level']",Function,Series.mad()
+Computations / descriptive stats,"Series.max([axis, skipna, level, numeric_only])",Return the maximum of the values over the requested axis.,maximum over axis,"['axis', 'skipna', 'level', 'numeric_only']",Function,Series.max()
+Computations / descriptive stats,"Series.mean([axis, skipna, level, numeric_only])",Return the mean of the values over the requested axis.,mean over axis,"['axis', 'skipna', 'level', 'numeric_only']",Function,Series.mean()
+Computations / descriptive stats,"Series.median([axis, skipna, level, ...])",Return the median of the values over the requested axis.,median over axis,"['axis', 'skipna', 'level', '...']",Function,Series.median()
+Computations / descriptive stats,"Series.min([axis, skipna, level, numeric_only])",Return the minimum of the values over the requested axis.,minimum over axis,"['axis', 'skipna', 'level', 'numeric_only']",Function,Series.min()
+Computations / descriptive stats,Series.mode([dropna]),Return the mode(s) of the Series.,mode of series,['dropna'],Function,Series.mode()
+Computations / descriptive stats,"Series.nlargest([n, keep])",Return the largest n elements.,largest group of elements,"['n', 'keep']",Function,Series.nlargest()
+Computations / descriptive stats,"Series.nsmallest([n, keep])",Return the smallest n elements.,smallest group of elements,"['n', 'keep']",Function,Series.nsmallest()
+Computations / descriptive stats,"Series.pct_change([periods, fill_method, ...])",Percentage change between the current and a prior element.,percentage change in elements,"['periods', 'fill_method', '...']",Function,Series.pct_change()
+Computations / descriptive stats,"Series.prod([axis, skipna, level, ...])",Return the product of the values over the requested axis.,product by axis,"['axis', 'skipna', 'level', '...']",Function,Series.prod()
+Computations / descriptive stats,"Series.quantile([q, interpolation])",Return value at the given quantile.,get quantile,"['q', 'interpolation']",Function,Series.quantile()
+Computations / descriptive stats,"Series.rank([axis, method, numeric_only, ...])",Compute numerical data ranks (1 through n) along axis.,get rank,"['axis', 'method', 'numeric_only', '...']",Function,Series.rank()
+Computations / descriptive stats,"Series.sem([axis, skipna, level, ddof, ...])",Return unbiased standard error of the mean over requested axis.,mean standard error,"['axis', 'skipna', 'level', 'ddof', '...']",Function,Series.sem()
+Computations / descriptive stats,"Series.skew([axis, skipna, level, numeric_only])",Return unbiased skew over requested axis.,skewness,"['axis', 'skipna', 'level', 'numeric_only']",Function,Series.skew()
+Computations / descriptive stats,"Series.std([axis, skipna, level, ddof, ...])",Return sample standard deviation over requested axis.,standard deviation,"['axis', 'skipna', 'level', 'ddof', '...']",Function,Series.std()
+Computations / descriptive stats,"Series.sum([axis, skipna, level, ...])",Return the sum of the values over the requested axis.,sum by axis,"['axis', 'skipna', 'level', '...']",Function,Series.sum()
+Computations / descriptive stats,"Series.var([axis, skipna, level, ddof, ...])",Return unbiased variance over requested axis.,variance by axis,"['axis', 'skipna', 'level', 'ddof', '...']",Function,Series.var()
+Computations / descriptive stats,"Series.kurtosis([axis, skipna, level, ...])",Return unbiased kurtosis over requested axis.,kurtosis by axis,"['axis', 'skipna', 'level', '...']",Function,Series.kurtosis()
+Computations / descriptive stats,Series.unique(),Return unique values of Series object.,unique values,[''],Function,Series.unique()
+Computations / descriptive stats,Series.nunique([dropna]),Return number of unique elements in the object.,number of unique values,['dropna'],Function,Series.nunique()
+Computations / descriptive stats,Series.is_unique,Return boolean if values in the object are unique.,unique values,,Attribute,Series.is_unique
+Computations / descriptive stats,Series.is_monotonic,(DEPRECATED) Return boolean if values in the object are monotonically increasing.,monotonic ,,Attribute,Series.is_monotonic
+Computations / descriptive stats,Series.is_monotonic_increasing,Return boolean if values in the object are monotonically increasing.,increasing values,,Attribute,Series.is_monotonic_increasing
+Computations / descriptive stats,Series.is_monotonic_decreasing,Return boolean if values in the object are monotonically decreasing.,decreasing values,,Attribute,Series.is_monotonic_decreasing
+Computations / descriptive stats,"Series.value_counts([normalize, sort, ...])",Return a Series containing counts of unique values.,count of unique values,"['normalize', 'sort', '...']",Function,Series.value_counts()
+Reindexing / selection / label manipulation,"Series.align(other[, join, axis, level, ...])",Align two objects on their axes with the specified join method.,join,"['other', 'join', 'axis', 'level', '...']",Function,Series.align()
+Reindexing / selection / label manipulation,"Series.drop([labels, axis, index, columns, ...])",Return Series with specified index labels removed.,drop values,"['labels', 'axis', 'index', 'columns', '...']",Function,Series.drop()
+Reindexing / selection / label manipulation,"Series.droplevel(level[, axis])",Return Series/DataFrame with requested index / column level(s) removed.,drop levels,"['level', 'axis']",Function,Series.droplevel()
+Reindexing / selection / label manipulation,"Series.drop_duplicates([keep, inplace])",Return Series with duplicate values removed.,drop duplicates,"['keep', 'inplace']",Function,Series.drop_duplicates()
+Reindexing / selection / label manipulation,Series.duplicated([keep]),Indicate duplicate Series values.,duplicates,['keep'],Function,Series.duplicated()
+Reindexing / selection / label manipulation,Series.equals(other),Test whether two objects contain the same elements.,equal elements,['other'],Function,Series.equals()
+Reindexing / selection / label manipulation,Series.first(offset),Select initial periods of time series data based on a date offset.,initial elements of timeseries,['offset'],Function,Series.first()
+Reindexing / selection / label manipulation,Series.head([n]),Return the first n rows.,get first rows,['n'],Function,Series.head()
+Reindexing / selection / label manipulation,"Series.idxmax([axis, skipna])",Return the row label of the maximum value.,label of maximum value,"['axis', 'skipna']",Function,Series.idxmax()
+Reindexing / selection / label manipulation,"Series.idxmin([axis, skipna])",Return the row label of the minimum value.,lablel of minimum value,"['axis', 'skipna']",Function,Series.idxmin()
+Reindexing / selection / label manipulation,Series.isin(values),Whether elements in Series are contained in values.,equal to values,['values'],Function,Series.isin()
+Reindexing / selection / label manipulation,Series.last(offset),Select final periods of time series data based on a date offset.,final elements of timeseries,['offset'],Function,Series.last()
+Reindexing / selection / label manipulation,"Series.reindex(*args, **kwargs)",Conform Series to new index with optional filling logic.,reindex,"['*args', '**kwargs']",Function,Series.reindex()
+Reindexing / selection / label manipulation,"Series.reindex_like(other[, method, copy, ...])",Return an object with matching indices as other object.,reindex like other,"['other', 'method', 'copy', '...']",Function,Series.reindex_like()
+Reindexing / selection / label manipulation,"Series.rename([index, axis, copy, inplace, ...])",Alter Series index labels or name.,rename labels,"['index', 'axis', 'copy', 'inplace', '...']",Function,Series.rename()
+Reindexing / selection / label manipulation,"Series.rename_axis([mapper, index, columns, ...])",Set the name of the axis for the index or columns.,rename axis,"['mapper', 'index', 'columns', '...']",Function,Series.rename_axis()
+Reindexing / selection / label manipulation,"Series.reset_index([level, drop, name, ...])",Generate a new DataFrame or Series with the index reset.,reset index,"['level', 'drop', 'name', '...']",Function,Series.reset_index()
+Reindexing / selection / label manipulation,"Series.sample([n, frac, replace, weights, ...])",Return a random sample of items from an axis of object.,random sample,"['n', 'frac', 'replace', 'weights', '...']",Function,Series.sample()
+Reindexing / selection / label manipulation,"Series.set_axis(labels[, axis, inplace, copy])",Assign desired index to given axis.,index to axis,"['labels', 'axis', 'inplace', 'copy']",Function,Series.set_axis()
+Reindexing / selection / label manipulation,"Series.take(indices[, axis, is_copy])",Return the elements in the given positional indices along an axis.,values by index,"['indices', 'axis', 'is_copy']",Function,Series.take()
+Reindexing / selection / label manipulation,Series.tail([n]),Return the last n rows.,get last rows,['n'],Function,Series.tail()
+Reindexing / selection / label manipulation,"Series.truncate([before, after, axis, copy])",Truncate a Series or DataFrame before and after some index value.,turnicate series,"['before', 'after', 'axis', 'copy']",Function,Series.truncate()
+Reindexing / selection / label manipulation,"Series.where(cond[, other, inplace, axis, ...])",Replace values where the condition is False.,replace,"['cond', 'other', 'inplace', 'axis', '...']",Function,Series.where()
+Reindexing / selection / label manipulation,"Series.mask(cond[, other, inplace, axis, ...])",Replace values where the condition is True.,replace,"['cond', 'other', 'inplace', 'axis', '...']",Function,Series.mask()
+Reindexing / selection / label manipulation,Series.add_prefix(prefix),Prefix labels with string prefix.,Prefix labels,['prefix'],Function,Series.add_prefix()
+Reindexing / selection / label manipulation,Series.add_suffix(suffix),Suffix labels with string suffix.,Suffix labels,['suffix'],Function,Series.add_suffix()
+Reindexing / selection / label manipulation,"Series.filter([items, like, regex, axis])",Subset the dataframe rows or columns according to the specified index labels.,filter,"['items', 'like', 'regex', 'axis']",Function,Series.filter()
+Missing data handling,"Series.backfill([axis, inplace, limit, downcast])",Synonym for DataFrame.fillna() with method='bfill'.,fill with next value,"['axis', 'inplace', 'limit', 'downcast']",Function,Series.backfill()
+Missing data handling,"Series.bfill([axis, inplace, limit, downcast])",Synonym for DataFrame.fillna() with method='bfill'.,fill with next value,"['axis', 'inplace', 'limit', 'downcast']",Function,Series.bfill()
+Missing data handling,"Series.dropna([axis, inplace, how])",Return a new Series with missing values removed.,drop missing values,"['axis', 'inplace', 'how']",Function,Series.dropna()
+Missing data handling,"Series.ffill([axis, inplace, limit, downcast])",Synonym for DataFrame.fillna() with method='ffill'.,fill with previous value,"['axis', 'inplace', 'limit', 'downcast']",Function,Series.ffill()
+Missing data handling,"Series.fillna([value, method, axis, ...])",Fill NA/NaN values using the specified method.,fill with value,"['value', 'method', 'axis', '...']",Function,Series.fillna()
+Missing data handling,"Series.interpolate([method, axis, limit, ...])",Fill NaN values using an interpolation method.,fill with regression,"['method', 'axis', 'limit', '...']",Function,Series.interpolate()
+Missing data handling,Series.isna(),Detect missing values.,find missing values,[''],Function,Series.isna()
+Missing data handling,Series.isnull(),Series.isnull is an alias for Series.isna.,find missing values,[''],Function,Series.isnull()
+Missing data handling,Series.notna(),Detect existing (non-missing) values.,find if not null,[''],Function,Series.notna()
+Missing data handling,Series.notnull(),Series.notnull is an alias for Series.notna.,find if not null,[''],Function,Series.notnull()
+Missing data handling,"Series.pad([axis, inplace, limit, downcast])",Synonym for DataFrame.fillna() with method='ffill'.,fill with previous value,"['axis', 'inplace', 'limit', 'downcast']",Function,Series.pad()
+Missing data handling,"Series.replace([to_replace, value, inplace, ...])",Replace values given in to_replace with value.,replace,"['to_replace', 'value', 'inplace', '...']",Function,Series.replace()
+"Reshaping, sorting","Series.argsort([axis, kind, order])",Return the integer indices that would sort the Series values.,sort,"['axis', 'kind', 'order']",Function,Series.argsort()
+"Reshaping, sorting","Series.argmin([axis, skipna])",Return int position of the smallest value in the Series.,position of minimum value,"['axis', 'skipna']",Function,Series.argmin()
+"Reshaping, sorting","Series.argmax([axis, skipna])",Return int position of the largest value in the Series.,position of maximum value,"['axis', 'skipna']",Function,Series.argmax()
+"Reshaping, sorting",Series.reorder_levels(order),Rearrange index levels using input order.,rearrange index,['order'],Function,Series.reorder_levels()
+"Reshaping, sorting","Series.sort_values([axis, ascending, ...])",Sort by the values.,sort by values,"['axis', 'ascending', '...']",Function,Series.sort_values()
+"Reshaping, sorting","Series.sort_index([axis, level, ascending, ...])",Sort Series by index labels.,sort by index,"['axis', 'level', 'ascending', '...']",Function,Series.sort_index()
+"Reshaping, sorting","Series.swaplevel([i, j, copy])",Swap levels i and j in a MultiIndex.,swap in elements,"['i', 'j', 'copy']",Function,Series.swaplevel()
+"Reshaping, sorting","Series.unstack([level, fill_value])","Unstack, also known as pivot, Series with MultiIndex to produce DataFrame.",series to dataframe,"['level', 'fill_value']",Function,Series.unstack()
+"Reshaping, sorting",Series.explode([ignore_index]),Transform each element of a list-like to a row.,,['ignore_index'],Function,Series.explode()
+"Reshaping, sorting","Series.searchsorted(value[, side, sorter])",Find indices where elements should be inserted to maintain order.,insert sorted,"['value', 'side', 'sorter']",Function,Series.searchsorted()
+"Reshaping, sorting",Series.ravel([order]),Return the flattened underlying data as an ndarray.,flattened array,['order'],Function,Series.ravel()
+"Reshaping, sorting","Series.repeat(repeats[, axis])",Repeat elements of a Series.,repeat values,"['repeats', 'axis']",Function,Series.repeat()
+"Reshaping, sorting",Series.squeeze([axis]),Squeeze 1 dimensional axis objects into scalars.,convert to scalar,['axis'],Function,Series.squeeze()
+"Reshaping, sorting",Series.view([dtype]),Create a new view of the Series.,new view,['dtype'],Function,Series.view()
+Combining / comparing / joining / merging,"Series.append(to_append[, ignore_index, ...])",(DEPRECATED) Concatenate two or more Series.,merge series,"['to_append', 'ignore_index', '...']",Function,Series.append()
+Combining / comparing / joining / merging,"Series.compare(other[, align_axis, ...])",Compare to another Series and show the differences.,compare in values,"['other', 'align_axis', '...']",Function,Series.compare()
+Combining / comparing / joining / merging,Series.update(other),Modify Series in place using values from passed Series.,update values,['other'],Function,Series.update()
+Time Series-related,"Series.asfreq(freq[, method, how, ...])",Convert time series to specified frequency.,convert to frequency,"['freq', 'method', 'how', '...']",Function,Series.asfreq()
+Time Series-related,"Series.asof(where[, subset])",Return the last row(s) without any NaNs before where.,get last rows without nulls,"['where', 'subset']",Function,Series.asof()
+Time Series-related,"Series.shift([periods, freq, axis, fill_value])",Shift index by desired number of periods with an optional time freq.,,"['periods', 'freq', 'axis', 'fill_value']",Function,Series.shift()
+Time Series-related,Series.first_valid_index(),"Return index for first non-NA value or None, if no non-NA value is found.",,[''],Function,Series.first_valid_index()
+Time Series-related,Series.last_valid_index(),"Return index for last non-NA value or None, if no non-NA value is found.",,[''],Function,Series.last_valid_index()
+Time Series-related,"Series.resample(rule[, axis, closed, label, ...])",Resample time-series data.,,"['rule', 'axis', 'closed', 'label', '...']",Function,Series.resample()
+Time Series-related,"Series.tz_convert(tz[, axis, level, copy])",Convert tz-aware axis to target time zone.,tz_convertste-,"['tz', 'axis', 'level', 'copy']",Function,Series.tz_convert()
+Time Series-related,"Series.tz_localize(tz[, axis, level, copy, ...])",Localize tz-naive index of a Series or DataFrame to target time zone.,to a index,"['tz', 'axis', 'level', 'copy', '...']",Function,Series.tz_localize()
+Time Series-related,"Series.at_time(time[, asof, axis])","Select values at particular time of day (e.g., 9:30AM).",select values at in elements,"['time', 'asof', 'axis']",Function,Series.at_time()
+Time Series-related,"Series.between_time(start_time, end_time[, ...])","Select values between particular times of the day (e.g., 9:00-9:30 AM).",select values between particular in elements,"['start_time', 'end_time', '...']",Function,Series.between_time()
+Time Series-related,"Series.tshift([periods, freq, axis])","(DEPRECATED) Shift the time index, using the index's frequency if available.",deprecated shift the time in elements,"['periods', 'freq', 'axis']",Function,Series.tshift()
+Time Series-related,"Series.slice_shift([periods, axis])",(DEPRECATED) Equivalent to shift without copying data.,to by periods,"['periods', 'axis']",Function,Series.slice_shift()
+Accessors,dt,"Datetime, Timedelta, Period",date time,,Attribute,dt
+Accessors,str,String,string,,Attribute,str
+Accessors,cat,Categorical,categorical,,Attribute,cat
+Accessors,sparse,Sparse,sparse,,Attribute,sparse
+Accessors,Series.dt.date,Datetime properties,date objects,,Attribute,Series.dt.date
+Accessors,Series.dt.date,Returns numpy array of python datetime.date objects.,date objects,,Attribute,Series.dt.date
+Accessors,Series.dt.time,Returns numpy array of datetime.time objects.,time objects,,Attribute,Series.dt.time
+Accessors,Series.dt.timetz,Returns numpy array of datetime.time objects with timezones.,time objects with timezone,,Attribute,Series.dt.timetz
+Accessors,Series.dt.year,The year of the datetime.,get year,,Attribute,Series.dt.year
+Accessors,Series.dt.month,"The month as January=1, December=12.",get month,,Attribute,Series.dt.month
+Accessors,Series.dt.day,The day of the datetime.,get day,,Attribute,Series.dt.day
+Accessors,Series.dt.hour,The hours of the datetime.,get hour,,Attribute,Series.dt.hour
+Accessors,Series.dt.minute,The minutes of the datetime.,get minute,,Attribute,Series.dt.minute
+Accessors,Series.dt.second,The seconds of the datetime.,get second,,Attribute,Series.dt.second
+Accessors,Series.dt.microsecond,The microseconds of the datetime.,get microsecond,,Attribute,Series.dt.microsecond
+Accessors,Series.dt.nanosecond,The nanoseconds of the datetime.,get milisecond,,Attribute,Series.dt.nanosecond
+Accessors,Series.dt.week,(DEPRECATED) The week ordinal of the year according to the ISO 8601 standard.,get week,,Attribute,Series.dt.week
+Accessors,Series.dt.weekofyear,(DEPRECATED) The week ordinal of the year according to the ISO 8601 standard.,get week of year,,Attribute,Series.dt.weekofyear
+Accessors,Series.dt.dayofweek,"The day of the week with Monday=0, Sunday=6.",get day of week,,Attribute,Series.dt.dayofweek
+Accessors,Series.dt.day_of_week,"The day of the week with Monday=0, Sunday=6.",get day of week,,Attribute,Series.dt.day_of_week
+Accessors,Series.dt.weekday,"The day of the week with Monday=0, Sunday=6.",get day of week,,Attribute,Series.dt.weekday
+Accessors,Series.dt.dayofyear,The ordinal day of the year.,get day of year,,Attribute,Series.dt.dayofyear
+Accessors,Series.dt.day_of_year,The ordinal day of the year.,get day of year,,Attribute,Series.dt.day_of_year
+Accessors,Series.dt.quarter,The quarter of the date.,get quarter of date,,Attribute,Series.dt.quarter
+Accessors,Series.dt.is_month_start,Indicates whether the date is the first day of the month.,check if start of month,,Attribute,Series.dt.is_month_start
+Accessors,Series.dt.is_month_end,Indicates whether the date is the last day of the month.,check if end of month,,Attribute,Series.dt.is_month_end
+Accessors,Series.dt.is_quarter_start,Indicator for whether the date is the first day of a quarter.,check if start of quarter,,Attribute,Series.dt.is_quarter_start
+Accessors,Series.dt.is_quarter_end,Indicator for whether the date is the last day of a quarter.,check if end of quarter,,Attribute,Series.dt.is_quarter_end
+Accessors,Series.dt.is_year_start,Indicate whether the date is the first day of a year.,check if start of year,,Attribute,Series.dt.is_year_start
+Accessors,Series.dt.is_year_end,Indicate whether the date is the last day of the year.,check if end of year,,Attribute,Series.dt.is_year_end
+Accessors,Series.dt.is_leap_year,Boolean indicator if the date belongs to a leap year.,chec if leap year,,Attribute,Series.dt.is_leap_year
+Accessors,Series.dt.daysinmonth,The number of days in the month.,number of days in month,,Attribute,Series.dt.daysinmonth
+Accessors,Series.dt.days_in_month,The number of days in the month.,number of days in month,,Attribute,Series.dt.days_in_month
+Accessors,Series.dt.tz,Return the timezone.,get timezone,,Attribute,Series.dt.tz
+Accessors,Series.dt.freq,Return the frequency object for this PeriodArray.,frequency object,,Attribute,Series.dt.freq
+Accessors,Series.dt.isocalendar(),"Calculate year, week, and day according to the ISO 8601 standard.",calculate date according to ISO,[''],Function,Series.dt.isocalendar()
+Accessors,"Series.dt.to_period(*args, **kwargs)",Cast to PeriodArray/Index at a particular frequency.,cast to array,"['*args', '**kwargs']",Function,Series.dt.to_period()
+Accessors,Series.dt.to_pydatetime(),Return the data as an array of datetime.datetime objects.,date time array objects,[''],Function,Series.dt.to_pydatetime()
+Accessors,"Series.dt.tz_localize(*args, **kwargs)",Localize tz-naive Datetime Array/Index to tz-aware Datetime Array/Index.,localize to timezone,"['*args', '**kwargs']",Function,Series.dt.tz_localize()
+Accessors,"Series.dt.tz_convert(*args, **kwargs)",Convert tz-aware Datetime Array/Index from one time zone to another.,convert to another timezone,"['*args', '**kwargs']",Function,Series.dt.tz_convert()
+Accessors,"Series.dt.normalize(*args, **kwargs)",Convert times to midnight.,convert to midnight time,"['*args', '**kwargs']",Function,Series.dt.normalize()
+Accessors,"Series.dt.strftime(*args, **kwargs)",Convert to Index using specified date_format.,convert to index ,"['*args', '**kwargs']",Function,Series.dt.strftime()
+Accessors,"Series.dt.round(*args, **kwargs)",Perform round operation on the data to the specified freq.,round by frequency,"['*args', '**kwargs']",Function,Series.dt.round()
+Accessors,"Series.dt.floor(*args, **kwargs)",Perform floor operation on the data to the specified freq.,floor by frequency,"['*args', '**kwargs']",Function,Series.dt.floor()
+Accessors,"Series.dt.ceil(*args, **kwargs)",Perform ceil operation on the data to the specified freq.,ceil by frequency,"['*args', '**kwargs']",Function,Series.dt.ceil()
+Accessors,"Series.dt.month_name(*args, **kwargs)",Return the month names with specified locale.,get locale month names,"['*args', '**kwargs']",Function,Series.dt.month_name()
+Accessors,"Series.dt.day_name(*args, **kwargs)",Return the day names with specified locale.,get locale day names,"['*args', '**kwargs']",Function,Series.dt.day_name()
+Accessors,Series.dt.start_time,Get the Timestamp for the start of the period.,period start time,,Attribute,Series.dt.start_time
+Accessors,Series.dt.end_time,Get the Timestamp for the end of the period.,period end time,,Attribute,Series.dt.end_time
+Accessors,Series.dt.days,Number of days for each element.,element days,,Attribute,Series.dt.days
+Accessors,Series.dt.seconds,Number of seconds (>= 0 and less than 1 day) for each element.,element seconds,,Attribute,Series.dt.seconds
+Accessors,Series.dt.microseconds,Number of microseconds (>= 0 and less than 1 second) for each element.,element microseconds,,Attribute,Series.dt.microseconds
+Accessors,Series.dt.nanoseconds,Number of nanoseconds (>= 0 and less than 1 microsecond) for each element.,element nanoseconds,,Attribute,Series.dt.nanoseconds
+Accessors,Series.dt.components,Return a Dataframe of the components of the Timedeltas.,components of time deltas,,Attribute,Series.dt.components
+Accessors,Series.dt.to_pytimedelta(),Return an array of native datetime.timedelta objects.,timedelta array,[''],Function,Series.dt.to_pytimedelta()
+Accessors,"Series.dt.total_seconds(*args, **kwargs)",Return total duration of each element expressed in seconds.,duration in seconds,"['*args', '**kwargs']",Function,Series.dt.total_seconds()
+Accessors,Series.str.capitalize(),Convert strings in the Series/Index to be capitalized.,capitalize,[''],Function,Series.str.capitalize()
+Accessors,Series.str.casefold(),Convert strings in the Series/Index to be casefolded.,casefold,[''],Function,Series.str.casefold()
+Accessors,"Series.str.cat([others, sep, na_rep, join])",Concatenate strings in the Series/Index with given separator.,merge string,"['others', 'sep', 'na_rep', 'join']",Function,Series.str.cat()
+Accessors,"Series.str.center(width[, fillchar])",Pad left and right side of strings in the Series/Index.,pad string,"['width', 'fillchar']",Function,Series.str.center()
+Accessors,"Series.str.contains(pat[, case, flags, na, ...])",Test if pattern or regex is contained within a string of a Series or Index.,check pattern,"['pat', 'case', 'flags', 'na', '...']",Function,Series.str.contains()
+Accessors,"Series.str.count(pat[, flags])",Count occurrences of pattern in each string of the Series/Index.,count patterns,"['pat', 'flags']",Function,Series.str.count()
+Accessors,"Series.str.decode(encoding[, errors])",Decode character string in the Series/Index using indicated encoding.,decode,"['encoding', 'errors']",Function,Series.str.decode()
+Accessors,"Series.str.encode(encoding[, errors])",Encode character string in the Series/Index using indicated encoding.,encode,"['encoding', 'errors']",Function,Series.str.encode()
+Accessors,"Series.str.endswith(pat[, na])",Test if the end of each string element matches a pattern.,check pattern,"['pat', 'na']",Function,Series.str.endswith()
+Accessors,"Series.str.extract(pat[, flags, expand])",Extract capture groups in the regex pat as columns in a DataFrame.,extract patterns,"['pat', 'flags', 'expand']",Function,Series.str.extract()
+Accessors,"Series.str.extractall(pat[, flags])",Extract capture groups in the regex pat as columns in DataFrame.,extract patterns,"['pat', 'flags']",Function,Series.str.extractall()
+Accessors,"Series.str.find(sub[, start, end])",Return lowest indexes in each strings in the Series/Index.,extract capture groups in in elements,"['sub', 'start', 'end']",Function,Series.str.find()
+Accessors,"Series.str.findall(pat[, flags])",Find all occurrences of pattern or regular expression in the Series/Index.,find all patterns,"['pat', 'flags']",Function,Series.str.findall()
+Accessors,"Series.str.fullmatch(pat[, case, flags, na])",Determine if each string entirely matches a regular expression.,find all patterns,"['pat', 'case', 'flags', 'na']",Function,Series.str.fullmatch()
+Accessors,Series.str.get(i),Extract element from each component at specified position or with specified key.,get element,['i'],Function,Series.str.get()
+Accessors,"Series.str.index(sub[, start, end])",Return lowest indexes in each string in Series/Index.,lowest index,"['sub', 'start', 'end']",Function,Series.str.index()
+Accessors,Series.str.join(sep),Join lists contained as elements in the Series/Index with passed delimiter.,join ,['sep'],Function,Series.str.join()
+Accessors,Series.str.len(),Compute the length of each element in the Series/Index.,lenght of strings,[''],Function,Series.str.len()
+Accessors,"Series.str.ljust(width[, fillchar])",Pad right side of strings in the Series/Index.,pad string ,"['width', 'fillchar']",Function,Series.str.ljust()
+Accessors,Series.str.lower(),Convert strings in the Series/Index to lowercase.,convert to lower,[''],Function,Series.str.lower()
+Accessors,Series.str.lstrip([to_strip]),Remove leading characters.,remove leading characters,['to_strip'],Function,Series.str.lstrip()
+Accessors,"Series.str.match(pat[, case, flags, na])",Determine if each string starts with a match of a regular expression.,check if pattern,"['pat', 'case', 'flags', 'na']",Function,Series.str.match()
+Accessors,Series.str.normalize(form),Return the Unicode normal form for the strings in the Series/Index.,normalize string,['form'],Function,Series.str.normalize()
+Accessors,"Series.str.pad(width[, side, fillchar])",Pad strings in the Series/Index up to width.,pad string,"['width', 'side', 'fillchar']",Function,Series.str.pad()
+Accessors,"Series.str.partition([sep, expand])",Split the string at the first occurrence of sep.,split by seperator,"['sep', 'expand']",Function,Series.str.partition()
+Accessors,Series.str.removeprefix(prefix),Remove a prefix from an object series.,remove prefix,['prefix'],Function,Series.str.removeprefix()
+Accessors,Series.str.removesuffix(suffix),Remove a suffix from an object series.,remove suffix,['suffix'],Function,Series.str.removesuffix()
+Accessors,Series.str.repeat(repeats),Duplicate each string in the Series or Index.,duplicate string,['repeats'],Function,Series.str.repeat()
+Accessors,"Series.str.replace(pat, repl[, n, case, ...])",Replace each occurrence of pattern/regex in the Series/Index.,replace according to pattern,"['pat', 'repl', 'n', 'case', '...']",Function,Series.str.replace()
+Accessors,"Series.str.rfind(sub[, start, end])",Return highest indexes in each strings in the Series/Index.,highest index,"['sub', 'start', 'end']",Function,Series.str.rfind()
+Accessors,"Series.str.rindex(sub[, start, end])",Return highest indexes in each string in Series/Index.,highest index,"['sub', 'start', 'end']",Function,Series.str.rindex()
+Accessors,"Series.str.rjust(width[, fillchar])",Pad left side of strings in the Series/Index.,pad string,"['width', 'fillchar']",Function,Series.str.rjust()
+Accessors,"Series.str.rpartition([sep, expand])",Split the string at the last occurrence of sep.,split by seperator,"['sep', 'expand']",Function,Series.str.rpartition()
+Accessors,Series.str.rstrip([to_strip]),Remove trailing characters.,string by to_strip]),['to_strip'],Function,Series.str.rstrip()
+Accessors,"Series.str.slice([start, stop, step])",Slice substrings from each element in the Series or Index.,slice string,"['start', 'stop', 'step']",Function,Series.str.slice()
+Accessors,"Series.str.slice_replace([start, stop, repl])",Replace a positional slice of a string with another value.,slice and replace,"['start', 'stop', 'repl']",Function,Series.str.slice_replace()
+Accessors,"Series.str.split([pat, n, expand, regex])",Split strings around given separator/delimiter.,split by seperator,"['pat', 'n', 'expand', 'regex']",Function,Series.str.split()
+Accessors,"Series.str.rsplit([pat, n, expand])",Split strings around given separator/delimiter.,split by seperator,"['pat', 'n', 'expand']",Function,Series.str.rsplit()
+Accessors,"Series.str.startswith(pat[, na])",Test if the start of each string element matches a pattern.,check if pattern,"['pat', 'na']",Function,Series.str.startswith()
+Accessors,Series.str.strip([to_strip]),Remove leading and trailing characters.,remove leading characters,['to_strip'],Function,Series.str.strip()
+Accessors,Series.str.swapcase(),Convert strings in the Series/Index to be swapcased.,swapcase,[''],Function,Series.str.swapcase()
+Accessors,Series.str.title(),Convert strings in the Series/Index to titlecase.,titlecase,[''],Function,Series.str.title()
+Accessors,Series.str.translate(table),Map all characters in the string through the given mapping table.,translate according to table,['table'],Function,Series.str.translate()
+Accessors,Series.str.upper(),Convert strings in the Series/Index to uppercase.,convert to upper,[''],Function,Series.str.upper()
+Accessors,"Series.str.wrap(width, **kwargs)",Wrap strings in Series/Index at specified line width.,wrap string,"['width', '**kwargs']",Function,Series.str.wrap()
+Accessors,Series.str.zfill(width),Pad strings in the Series/Index by prepending '0' characters.,pad with 0,['width'],Function,Series.str.zfill()
+Accessors,Series.str.isalnum(),Check whether all characters in each string are alphanumeric.,check if alphanumeric,[''],Function,Series.str.isalnum()
+Accessors,Series.str.isalpha(),Check whether all characters in each string are alphabetic.,check if alphabetic,[''],Function,Series.str.isalpha()
+Accessors,Series.str.isdigit(),Check whether all characters in each string are digits.,check if digits,[''],Function,Series.str.isdigit()
+Accessors,Series.str.isspace(),Check whether all characters in each string are whitespace.,check if wjhitespaces,[''],Function,Series.str.isspace()
+Accessors,Series.str.islower(),Check whether all characters in each string are lowercase.,check if lowercase,[''],Function,Series.str.islower()
+Accessors,Series.str.isupper(),Check whether all characters in each string are uppercase.,check if uppercase,[''],Function,Series.str.isupper()
+Accessors,Series.str.istitle(),Check whether all characters in each string are titlecase.,check if titlecase,[''],Function,Series.str.istitle()
+Accessors,Series.str.isnumeric(),Check whether all characters in each string are numeric.,check if numeric,[''],Function,Series.str.isnumeric()
+Accessors,Series.str.isdecimal(),Check whether all characters in each string are decimal.,check if decimal,[''],Function,Series.str.isdecimal()
+Accessors,Series.str.get_dummies([sep]),Return DataFrame of dummy/indicator variables for Series.,dummy,['sep'],Function,Series.str.get_dummies()
+Accessors,Series.cat.categories,The categories of this categorical.,get categories,,Attribute,Series.cat.categories
+Accessors,Series.cat.ordered,Whether the categories have an ordered relationship.,check ordered relation,,Attribute,Series.cat.ordered
+Accessors,Series.cat.codes,Return Series of codes as well as the index.,get codes,,Attribute,Series.cat.codes
+Accessors,"Series.cat.rename_categories(*args, **kwargs)",Rename categories.,rename categories,"['*args', '**kwargs']",Function,Series.cat.rename_categories()
+Accessors,"Series.cat.reorder_categories(*args, **kwargs)",Reorder categories as specified in new_categories.,reorder categories,"['*args', '**kwargs']",Function,Series.cat.reorder_categories()
+Accessors,"Series.cat.add_categories(*args, **kwargs)",Add new categories.,add category,"['*args', '**kwargs']",Function,Series.cat.add_categories()
+Accessors,"Series.cat.remove_categories(*args, **kwargs)",Remove the specified categories.,remove category,"['*args', '**kwargs']",Function,Series.cat.remove_categories()
+Accessors,"Series.cat.remove_unused_categories(*args, ...)",Remove categories which are not used.,remove unused categories,"['*args', '...']",Function,Series.cat.remove_unused_categories()
+Accessors,"Series.cat.set_categories(*args, **kwargs)",Set the categories to the specified new_categories.,set categories,"['*args', '**kwargs']",Function,Series.cat.set_categories()
+Accessors,"Series.cat.as_ordered(*args, **kwargs)",Set the Categorical to be ordered.,set ordered,"['*args', '**kwargs']",Function,Series.cat.as_ordered()
+Accessors,"Series.cat.as_unordered(*args, **kwargs)",Set the Categorical to be unordered.,set unordered,"['*args', '**kwargs']",Function,Series.cat.as_unordered()
+Accessors,Series.sparse.npoints,The number of non- fill_value points.,nonfll value points,,Attribute,Series.sparse.npoints
+Accessors,Series.sparse.density,"The percent of non- fill_value points, as decimal.",decimal nonfill value points ,,Attribute,Series.sparse.density
+Accessors,Series.sparse.fill_value,Elements in data that are fill_value are not stored.,fillvalue,,Attribute,Series.sparse.fill_value
+Accessors,Series.sparse.sp_values,An ndarray containing the non- fill_value values.,array of nonfill values,,Attribute,Series.sparse.sp_values
+Accessors,"Series.sparse.from_coo(A[, dense_index])",Create a Series with sparse values from a scipy.sparse.coo_matrix.,coo matrix,"['A', 'dense_index']",Function,Series.sparse.from_coo()
+Accessors,"Series.sparse.to_coo([row_levels, ...])",Create a scipy.sparse.coo_matrix from a Series with MultiIndex.,coo matrix,"['row_levels', '...']",Function,Series.sparse.to_coo()
+Accessors,"Flags(obj, *, allows_duplicate_labels)",Flags that apply to pandas objects.,constructor,"['obj', '*', 'allows_duplicate_labels']",Function,Flags()
+Accessors,Metadata,Series.attrs is a dictionary for storing global metadata for this Series.,metadata,,Attribute,Metadata
+Accessors,Warning,Series.attrs is considered experimental and may change without warning.,warning,,Attribute,Warning
+Accessors,Series.attrs,attributes,attributes,,Attribute,Series.attrs
+Plotting,"Series.plot([kind, ax, figsize, ....])",Series plotting accessor and method,plot a series,"['kind', 'ax', 'figsize', '....']",Function,Series.plot()
+Plotting,"Series.plot.area([x, y])",Draw a stacked area plot.,area plot,"['x', 'y']",Function,Series.plot.area()
+Plotting,"Series.plot.bar([x, y])",Vertical bar plot.,vertical bar plot,"['x', 'y']",Function,Series.plot.bar()
+Plotting,"Series.plot.barh([x, y])",Make a horizontal bar plot.,horizontal bar plot,"['x', 'y']",Function,Series.plot.barh()
+Plotting,Series.plot.box([by]),Make a box plot of the DataFrame columns.,box plot,['by'],Function,Series.plot.box()
+Plotting,"Series.plot.density([bw_method, ind])",Generate Kernel Density Estimate plot using Gaussian kernels.,density plot,"['bw_method', 'ind']",Function,Series.plot.density()
+Plotting,"Series.plot.hist([by, bins])",Draw one histogram of the DataFrame's columns.,histogram,"['by', 'bins']",Function,Series.plot.hist()
+Plotting,"Series.plot.kde([bw_method, ind])",Generate Kernel Density Estimate plot using Gaussian kernels.,kernal density lot,"['bw_method', 'ind']",Function,Series.plot.kde()
+Plotting,"Series.plot.line([x, y])",Plot Series or DataFrame as lines.,line plot,"['x', 'y']",Function,Series.plot.line()
+Plotting,Series.plot.pie(**kwargs),Generate a pie plot.,pie plot,['**kwargs'],Function,Series.plot.pie()
+Plotting,"Series.hist([by, ax, grid, xlabelsize, ...])",histogram,histogram,"['by', 'ax', 'grid', 'xlabelsize', '...']",Function,Series.hist()
+Serialization / IO / conversion,"Series.to_pickle(path[, compression, ...])",Pickle (serialize) object to file.,write to pickle,"['path', 'compression', '...']",Function,Series.to_pickle()
+Serialization / IO / conversion,"Series.to_csv([path_or_buf, sep, na_rep, ...])",Write object to a comma-separated values (csv) file.,write to csv,"['path_or_buf', 'sep', 'na_rep', '...']",Function,Series.to_csv()
+Serialization / IO / conversion,Series.to_dict([into]),Convert Series to {label -> value} dict or dict-like object.,convert to dictionary,['into'],Function,Series.to_dict()
+Serialization / IO / conversion,"Series.to_excel(excel_writer[, sheet_name, ...])",Write object to an Excel sheet.,write to excel,"['excel_writer', 'sheet_name', '...']",Function,Series.to_excel()
+Serialization / IO / conversion,Series.to_frame([name]),Convert Series to DataFrame.,convert to dataframe,['name'],Function,Series.to_frame()
+Serialization / IO / conversion,Series.to_xarray(),Return an xarray object from the pandas object.,convert to array,[''],Function,Series.to_xarray()
+Serialization / IO / conversion,"Series.to_hdf(path_or_buf, key[, mode, ...])",Write the contained data to an HDF5 file using HDFStore.,write to HDF5,"['path_or_buf', 'key', 'mode', '...']",Function,Series.to_hdf()
+Serialization / IO / conversion,"Series.to_sql(name, con[, schema, ...])",Write records stored in a DataFrame to a SQL database.,write to sql,"['name', 'con', 'schema', '...']",Function,Series.to_sql()
+Serialization / IO / conversion,"Series.to_json([path_or_buf, orient, ...])",Convert the object to a JSON string.,conver to JSON,"['path_or_buf', 'orient', '...']",Function,Series.to_json()
+Serialization / IO / conversion,"Series.to_string([buf, na_rep, ...])",Render a string representation of the Series.,convert to string,"['buf', 'na_rep', '...']",Function,Series.to_string()
+Serialization / IO / conversion,"Series.to_clipboard([excel, sep])",Copy object to the system clipboard.,copy to clipboard,"['excel', 'sep']",Function,Series.to_clipboard()
+Serialization / IO / conversion,"Series.to_latex([buf, columns, col_space, ...])","Render object to a LaTeX tabular, longtable, or nested table.",conver to latex,"['buf', 'columns', 'col_space', '...']",Function,Series.to_latex()
+Serialization / IO / conversion,"Series.to_markdown([buf, mode, index, ...])",Print Series in Markdown-friendly format.,markdown format,"['buf', 'mode', 'index', '...']",Function,Series.to_markdown()
